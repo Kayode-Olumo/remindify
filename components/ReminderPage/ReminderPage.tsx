@@ -33,9 +33,7 @@ export default function ReminderPage() {
   const [activeView, setActiveView] = useState<"list" | "form" | "detail">(
     "list"
   );
-  const [selectedReminder, setSelectedReminder] = useState<Reminder | null>(
-    null
-  );
+
   const [searchQuery, setSearchQuery] = useState("");
   const [isClient, setIsClient] = useState(false);
 
@@ -112,11 +110,6 @@ export default function ReminderPage() {
     }
   };
 
-  const openReminderDetail = (reminder: Reminder) => {
-    setSelectedReminder(reminder);
-    setActiveView("detail");
-  };
-
   const filteredReminders = reminders.filter(
     (reminder) =>
       reminder.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -191,7 +184,6 @@ export default function ReminderPage() {
                         <Card
                           key={reminder.id}
                           className={`${reminder.color} cursor-pointer`}
-                          onClick={() => openReminderDetail(reminder)}
                         >
                           <CardHeader>
                             <CardTitle>{reminder.title}</CardTitle>
