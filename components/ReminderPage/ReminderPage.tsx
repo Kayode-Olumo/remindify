@@ -20,12 +20,6 @@ const ReminderForm = dynamic(
     ssr: false,
   }
 );
-const ReminderDetail = dynamic(
-  () => import("@/components/ReminderDetail/ReminderDetail"),
-  {
-    ssr: false,
-  }
-);
 
 export default function ReminderPage() {
   const [reminders, setReminders] = useState<Reminder[]>([]);
@@ -223,7 +217,6 @@ export default function ReminderPage() {
                         <Card
                           key={reminder.id}
                           className={`${reminder.color} cursor-pointer`}
-                          onClick={() => openReminderDetail(reminder)}
                         >
                           <CardHeader>
                             <CardTitle>{reminder.title}</CardTitle>
@@ -232,11 +225,14 @@ export default function ReminderPage() {
                             </CardDescription>
                           </CardHeader>
                           <CardContent>
-                            <p className="text-xs bg-white bg-opacity-30 inline-block px-2 py-1 rounded-full">
-                              {reminder.date}, {reminder.time}
-                              {reminder.isRecurring &&
-                                ` (Recurring: ${reminder.recurringDay})`}
-                            </p>
+                            <div className="mb-4 grid grid-cols-[15px_1fr] items-start last:mb-0 last:pb-0">
+                              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+                              <p className="text-xs bg-white bg-opacity-30 inline-block px-2 py-1 rounded-full">
+                                {reminder.date}, {reminder.time}
+                                {reminder.isRecurring &&
+                                  ` (Recurring: ${reminder.recurringDay})`}
+                              </p>
+                            </div>
                           </CardContent>
                         </Card>
                       ))}
@@ -255,12 +251,6 @@ export default function ReminderPage() {
                 onAddReminder={addReminder}
                 onCancel={() => setActiveView("list")}
                 categories={categories}
-              />
-            )}
-            {activeView === "detail" && selectedReminder && (
-              <ReminderDetail
-                reminder={selectedReminder}
-                onBack={() => setActiveView("list")}
               />
             )}
           </div>
