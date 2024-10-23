@@ -1,0 +1,48 @@
+[
+  {
+    "id": "c0c2510d-01b2-4c31-aebf-2408dc96afd3",
+    "title": "test",
+    "description": "testing",
+    "date": "2024-10-23",
+    "time": "21:52",
+    "category": "Personal",
+    "isRecurring": true,
+    "recurringDay": "Wednesday",
+    "isPinned": false,
+    "color": "bg-red-200"
+  },
+  {
+    "id": "1729717259626",
+    "title": "test 2",
+    "description": "testing again",
+    "date": "2024-10-23",
+    "time": "22:04",
+    "category": "Work",
+    "isRecurring": false,
+    "isPinned": false,
+    "color": "bg-purple-200"
+  },
+  {
+    "id": "1729717517400",
+    "title": "test 3",
+    "description": "testing once more",
+    "date": "2024-10-24",
+    "time": "22:09",
+    "category": "Health",
+    "isRecurring": false,
+    "isPinned": false,
+    "color": "bg-red-200"
+  },
+  {
+    "id": "1729717693492",
+    "title": "test 4",
+    "description": "testing function",
+    "date": "2024-10-25",
+    "time": "22:11",
+    "category": "Work",
+    "isRecurring": true,
+    "recurringDay": "Friday",
+    "isPinned": false,
+    "color": "bg-red-200"
+  }
+]
