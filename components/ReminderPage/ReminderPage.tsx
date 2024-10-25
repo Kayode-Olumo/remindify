@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import ReminderAlarm from "@/components/ReminderAlarm/ReminderAlarm";
 import dynamic from "next/dynamic";
 import { Reminder, Category } from "@/types/reminder";
 
@@ -122,6 +123,7 @@ export default function ReminderPage() {
 
   return (
     <div className="min-h-screen bg-slate-900 p-4 md:p-8">
+      <ReminderAlarm reminders={reminders} />
       <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
         <div className="flex flex-col md:flex-row">
           {/* Sidebar */}
